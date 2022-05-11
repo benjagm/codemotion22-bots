@@ -9,16 +9,14 @@ Contenido de este repositorio:
     - Respuestas stateful de Telegram con Java
     - Respuestas stateful de WhatsApp con Twilio Studio
 
-Requisitos
-Telegram:
+Requisitos Telegram:
  - Requisitos de Telegram
  - Telegram Bot access token
  - Java 
  - Rubenlagus' Telegram library for Java
  - Java IDE
- - Ngrok
 
-WhatsApp:
+Requisitos WhatsApp:
  - Cuenta de Twilio y un teléfono de prueba
  - Sandbox WhatsApp 
  - Java
