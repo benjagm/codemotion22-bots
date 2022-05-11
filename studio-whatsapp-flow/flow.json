@@ -1,0 +1,88 @@
+{
+  "description": "A New Flow",
+  "states": [
+    {
+      "name": "Trigger",
+      "type": "trigger",
+      "transitions": [
+        {
+          "next": "send_and_reply_welcome",
+          "event": "incomingMessage"
+        },
+        {
+          "event": "incomingCall"
+        },
+        {
+          "event": "incomingRequest"
+        },
+        {
+          "event": "incomingParent"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 380,
+          "y": 70
+        }
+      }
+    },
+    {
+      "name": "send_and_reply_welcome",
+      "type": "send-and-wait-for-reply",
+      "transitions": [
+        {
+          "next": "send_and_reply_end",
+          "event": "incomingMessage"
+        },
+        {
+          "event": "timeout"
+        },
+        {
+          "event": "deliveryFailure"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 500,
+          "y": 330
+        },
+        "service": "{{trigger.message.InstanceSid}}",
+        "channel": "{{trigger.message.ChannelSid}}",
+        "from": "{{flow.channel.address}}",
+        "body": "Hola!! es importante que nos respondas a este mensaje con tus datos personales: Nombre completo, edad, trabajo y ciudad.\n\nUn/a redactor/a del programa se pondrá en contacto contigo lo antes posible, gracias!",
+        "timeout": "3600"
+      }
+    },
+    {
+      "name": "send_and_reply_end",
+      "type": "send-and-wait-for-reply",
+      "transitions": [
+        {
+          "next": "send_and_reply_end",
+          "event": "incomingMessage"
+        },
+        {
+          "event": "timeout"
+        },
+        {
+          "event": "deliveryFailure"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 310,
+          "y": 590
+        },
+        "service": "{{trigger.message.InstanceSid}}",
+        "channel": "{{trigger.message.ChannelSid}}",
+        "from": "{{flow.channel.address}}",
+        "body": "Ya hemos recibido tu solicitud. Muchas gracias y suerte con el casting!",
+        "timeout": "3600"
+      }
+    }
+  ],
+  "initial_state": "Trigger",
+  "flags": {
+    "allow_concurrent_calls": true
+  }
+}
