@@ -5,9 +5,9 @@ Charla Codemotion 2022 - Más allá del Frontend integrando las APIs de Telegram
 Contenido de este repositorio:
 * Las presentación en formato PDF
 * Ejemplos:
- - Respuestas stateless de Telegram y WhatsApp en Java
- - Respuestas stateful de Telegram con Java
- - Respuestas stateful de WhatsApp con Twilio Studio
+    - Respuestas stateless de Telegram y WhatsApp en Java
+    - Respuestas stateful de Telegram con Java
+    - Respuestas stateful de WhatsApp con Twilio Studio
 
 Requisitos
 Telegram:
@@ -25,3 +25,8 @@ WhatsApp:
  - Twilio Messaging SDK for Java
  - Java IDE
  - Ngrok
+
+Puedes contactarme en: 
+* bgranados@twilio.com
+* benjagm
+* linkedin.com/in/benjagranados/
